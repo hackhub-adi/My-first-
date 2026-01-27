@@ -38,5 +38,10 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'Checkout', response.data)
 
+    def test_about(self):
+        response = self.app.get('/about')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Aditya Sharma', response.data)
+
 if __name__ == '__main__':
     unittest.main()

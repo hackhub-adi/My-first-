@@ -72,5 +72,9 @@ def remove_from_cart(product_id):
     session['cart'] = cart
     return redirect(url_for('cart'))
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
